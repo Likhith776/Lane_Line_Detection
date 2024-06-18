@@ -33,19 +33,17 @@ python main.py
 To process videos, place your videos in the `test_videos` directory and run the script:
 
 ```python
-python process_video.py
+python main.py
 ```
 
 This will process the videos and save the output in the `output_videos` directory.
 
 ## Project Structure
 
-- `main.py`: Contains the main logic for processing images to detect lane lines.
+- `lane_line_detection.py`: Contains the main logic for processing images to detect lane lines.
 - `test_images/`: Directory containing test images.
 - `test_videos/`: Directory containing test videos.
 - `output_videos/`: Directory where output videos will be saved.
-
---
 
 ## Methodology
 
@@ -59,8 +57,6 @@ The project involves the following steps to detect lane lines:
 6. **Hough Transform**: Use the Hough transform to detect lines in the edge-detected image.
 7. **Lane Line Averaging**: Average the detected lines to form a single line for the left and right lanes.
 8. **Drawing Lines**: Draw the lane lines onto the original image.
-
---
 
 ## Results
 
@@ -81,6 +77,33 @@ The lane line detection algorithm processes each image in several steps, and the
 
 Each of these steps contributes to isolating and highlighting the lane lines in the image. The final result showcases the detected lane lines overlaid on the original image, making it clear where the vehicle should stay within the lanes.
 
+#### Image Example
+Below is an example of the lane line detection process on a sample image:
+
+- Original Image:
+![Original Image](path/to/original_image.jpg)
+
+- After Color Selection:
+![Color Selection](path/to/color_selection_image.jpg)
+
+- After Grayscale Conversion:
+![Grayscale](path/to/grayscale_image.jpg)
+
+- After Gaussian Blur:
+![Gaussian Blur](path/to/gaussian_blur_image.jpg)
+
+- After Canny Edge Detection:
+![Canny Edge Detection](path/to/canny_edge_image.jpg)
+
+- After Region of Interest Selection:
+![Region of Interest](path/to/roi_image.jpg)
+
+- After Hough Transform:
+![Hough Transform](path/to/hough_transform_image.jpg)
+
+- Final Result with Lane Lines:
+![Lane Line Detection](path/to/final_result_image.jpg)
+
 ### Videos
 
 The lane line detection is also applied to video frames, processing each frame individually and combining them to produce a video with detected lane lines. The results for video processing are as follows:
@@ -89,39 +112,24 @@ The lane line detection is also applied to video frames, processing each frame i
 2. **Processed Frames**: Each frame of the video undergoes the same steps as the images (color selection, grayscale conversion, Gaussian blur, Canny edge detection, region of interest selection, Hough transform, lane line averaging).
 3. **Output Video**: The final output video shows the lane lines detected and overlaid on each frame of the original video.
 
-#### Example Results
+#### Video Examples
+
+Below are example results for the provided test videos:
 
 - **Solid White Right Video**:
   - The algorithm accurately detects the solid white line on the right side of the lane.
   - The processed video is saved as `solidWhiteRight_output.mp4` in the `output_videos` directory.
+  ![Solid White Right Video](path/to/solidWhiteRight_output.gif)
 
 - **Solid Yellow Left Video**:
   - The algorithm successfully identifies the solid yellow line on the left side of the lane.
   - The processed video is saved as `solidYellowLeft_output.mp4` in the `output_videos` directory.
+  ![Solid Yellow Left Video](path/to/solidYellowLeft_output.gif)
 
 - **Challenge Video**:
   - This video includes more complex scenarios such as shadows, curves, and changes in lighting.
   - The algorithm's performance demonstrates robustness in detecting lane lines under challenging conditions.
   - The processed video is saved as `challenge_output.mp4` in the `output_videos` directory.
-
-### Visual Examples
-
-#### Image Example
-![Lane Line Detection Example](results/image_results.png)
-*The above image demonstrates the step-by-step lane line detection process on a sample image.*
-
-#### Video Example
-![Lane Line Detection Video](results/video_results.gif)
-*The above animation shows frames from the processed video with detected lane lines overlaid.*
-
-### Performance Metrics
-
-The execution time for processing videos is recorded and displayed, indicating the efficiency of the algorithm:
-
-- **Solid White Right Video**: `Execution time: X seconds`
-- **Solid Yellow Left Video**: `Execution time: X seconds`
-- **Challenge Video**: `Execution time: X seconds`
-
-These metrics provide an understanding of the computational requirements and performance of the lane line detection algorithm.
+  ![Challenge Video](path/to/challenge_output.gif)
 
 ---
