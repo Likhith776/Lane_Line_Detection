@@ -25,7 +25,7 @@ pip install numpy matplotlib opencv-python moviepy
 To detect lane lines in images, place your images in the `test_images` directory and run the following command:
 
 ```python
-python lane_line_detection.py
+python main.py
 ```
 
 ### Detect Lane Lines in Videos
