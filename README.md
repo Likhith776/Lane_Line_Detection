@@ -9,8 +9,6 @@ This repository contains a project for detecting lane lines in images and videos
 - [Project Structure](#project-structure)
 - [Methodology](#methodology)
 - [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Installation
 
